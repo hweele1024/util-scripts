@@ -8,6 +8,8 @@ if /i "%venv_choice%"=="y" (
     echo Setting up venv...
     python -m venv .venv
     call .venv\Scripts\activate.bat
-) else (
+) else if /i "%venv_choice%"=="n" (
     echo Skipping venv.
+) else (
+    echo Invalid choice. Please enter 'y' or 'n'.
 )
