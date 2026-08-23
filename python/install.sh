@@ -18,6 +18,9 @@ fi
 read -p "Install venv? (y/n): " venv_choice
 if [ "$venv_choice" = "y" ]; then
     echo "Setting up venv..."
+    if [ "$distro_choice" = "2" ]; then
+        sudo apt install -y python3-venv
+    fi
     python3 -m venv .venv
     source .venv/bin/activate
 elif [ "$venv_choice" = "n" ]; then
